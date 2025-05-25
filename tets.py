@@ -12,7 +12,7 @@ def get_visible_windows():
     win32gui.EnumWindows(enum_handler, None)
     return set(hwnds)
 
-print("Запоминаю окна...")
+print("Запоминаю окна..")
 known_windows = get_visible_windows()
 print("Ожидание появления нового окна...")
 
