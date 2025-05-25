@@ -17,7 +17,7 @@ known_windows = get_visible_windows()
 print("Ожидание появления нового окна...")
 
 while True:
-    time.sleep(10)  # Проверка раз в 10 секунд
+    time.sleep(10)  # Проверка раз в 10 секун
     current_windows = get_visible_windows()
     new_windows = current_windows - known_windows
 
