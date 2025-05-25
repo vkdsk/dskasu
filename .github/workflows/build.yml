@@ -1,0 +1,31 @@
+name: Build EXE
+
+on:
+  push:
+    paths:
+      - '**.py'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install pyinstaller
+
+      - name: Build with PyInstaller
+        run: pyinstaller --onefile --noconsole script.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-exe
+          path: dist/script.exe
