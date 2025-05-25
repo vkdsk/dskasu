@@ -19,7 +19,9 @@ jobs:
           python-version: 3.11
 
       - name: Install dependencies
-        run: pip install pyinstaller
+        run: |
+          pip install pyinstaller
+          pip install pywin32
 
       - name: Build with PyInstaller
         run: pyinstaller --onefile --noconsole tets.py
