@@ -22,7 +22,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build with PyInstaller
-        run: pyinstaller --onefile --noconsole script.py
+        run: pyinstaller --onefile --noconsole tets.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
